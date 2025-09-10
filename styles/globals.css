@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "ProcerusRegular";
+  src: url("/fonts/Procerus Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProcerusExtraLight";
+  src: url("/fonts/Procerus Extra Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Procerus";
+  src: url("/fonts/Procerus-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BBTorsosPro Ultra';
+  src: url('/fonts/bbtorsospro-ultra.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-bbtorsos {
+  font-family: 'BBTorsosPro Ultra', sans-serif !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Floating dollar notes */
+.money {
+  position: absolute;
+  width: 80px;
+  opacity: 0.8;
+  animation: float 8s ease-in-out infinite;
+}
+
+.dollar-1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.dollar-2 {
+  top: 40%;
+  left: 60%;
+  animation-delay: 1s;
+}
+
+.dollar-3 {
+  top: 70%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ✅ Prevent horizontal scrolling forever */
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+/* ✅ DISCO moving rows */
+.disco-row {
+  width: 200vw;
+  white-space: nowrap;
+  font-family: 'BBTorsosPro Ultra', sans-serif; /* ✅ Your font */
+  font-size: 16rem;            /* Slightly bigger */
+  font-weight: 900;
+  color: #c084fc;              /* Match nav bar */
+  opacity: 1;
+  text-align: center;
+  line-height: 0.85;           /* Tight vertical rows, no cut off */
+  margin: 0;
+  padding: 0;
+  letter-spacing: normal;      /* Natural letters */
+  word-spacing: -2rem;         /* ✅ Closer between DISCO words */
+  overflow: visible;
+}
+
+.disco-row-1 { animation: discoMoveRight 60s linear infinite; }
+.disco-row-2 { animation: discoMoveLeft 60s linear infinite; }
+.disco-row-3 { animation: discoMoveRight 60s linear infinite; }
+.disco-row-4 { animation: discoMoveLeft 60s linear infinite; }
+
+@keyframes discoMoveRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes discoMoveLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ✅ Clouds moving right */
+@keyframes cloudsRight {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; } /* ← positive value goes right */
+}
+
+
+.animate-clouds-right {
+  animation: cloudsRight 60s linear infinite;
+}
+
+/* Smooth fall that fades in/out so the loop reset is never seen */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateZ(0);
+    opacity: 0;               /* start invisible above */
+  }
+  3% {
+    opacity: 1;               /* fade in quickly */
+  }
+  97% {
+    opacity: 1;               /* stay visible most of the way down */
+  }
+  100% {
+    transform: translateY(220vh) rotate(360deg) translateZ(0); /* well past bottom */
+    opacity: 0;               /* fade out before reset */
+  }
+}
+
+.scroll-fall {
+  animation: fall linear infinite;
+  animation-fill-mode: both;  /* keep 0%/100% styles applied between cycles */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  pointer-events: none;
+}
+/* ==== MOBILE-ONLY DISCO ROWS (scoped) ==== */
+@media (max-width: 640px) {
+  .mobile-hero .disco-row {
+    /* scale typography for phones */
+    font-size: clamp(3rem, 18vw, 8rem);
+    word-spacing: clamp(-0.6rem, -2vw, -1.2rem);
+
+    /* give extra width so the row can drift like desktop */
+    width: 220vw;
+    line-height: 0.85;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-hero .disco-row {
+    width: 260vw;
+    line-height: 0.8;
+  }
+}
+
+/* Telegram / mobile webview safe base — minimal */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;                 /* avoid white bars */
+  -webkit-text-size-adjust: 100%;   /* stop auto font zoom */
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;               /* stop horizontal jitter/gaps */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { -webkit-tap-highlight-color: transparent; }
+
+/* DO NOT set any global img height/width rules */

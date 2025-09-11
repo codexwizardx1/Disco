@@ -844,7 +844,7 @@ useEffect(() => {
 
   {/* X */}
   <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://twitter.com/" target="_blank" rel="noreferrer" className="group">
+    <a href="https://x.com/discohedzeth" target="_blank" rel="noreferrer" className="group">
       <div className="w-24 h-24 rounded-2xl bg-black flex items-center justify-center 
                       transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
         <img src="/icons/x.svg" alt="X" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
@@ -888,7 +888,7 @@ useEffect(() => {
 
   {/* TikTok */}
   <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://www.tiktok.com/@yourhandle" target="_blank" rel="noreferrer" className="group">
+    <a href="https://www.tiktok.com/@discohedzeth" target="_blank" rel="noreferrer" className="group">
       <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
                       transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
         <img src="/icons/tiktok.svg" alt="TikTok" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
@@ -972,16 +972,16 @@ useEffect(() => {
 
                   <div
                     className="flex-1 text-center font-mono text-sm md:text-base tracking-wide overflow-hidden text-ellipsis whitespace-nowrap"
-                    title="0x34481f9d3b0659d3b45e67ba9f39372f005e91a8"
+                    title="COMING SOON"
                   >
-                    0x34481f9d3b0659d3b45e67ba9f39372f005e91a8
+                    COMING SOON
                   </div>
 
                   <button
                     type="button"
                     onClick={async () => {
                       try {
-                        await navigator.clipboard.writeText("0x34481f9d3b0659d3b45e67ba9f39372f005e91a8");
+                        await navigator.clipboard.writeText("COMING SOON");
                         setCopied(true);
                         setTimeout(() => setCopied(false), 1200);
                       } catch (e) {

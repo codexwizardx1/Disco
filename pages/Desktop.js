@@ -1077,7 +1077,7 @@ return (
         >
           {/* Telegram */}
           <div className="flex flex-col items-center gap-2">
-            <a href="https://t.me/" target="_blank" rel="noreferrer" className="group">
+            <a href="https://t.me/+pV8obb9od4I3ZWY0" target="_blank" rel="noreferrer" className="group">
               <div className="w-32 h-32 rounded-2xl bg-white flex items-center justify-center 
                               transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
                 <img

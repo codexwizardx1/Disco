@@ -833,7 +833,7 @@ useEffect(() => {
 >
   {/* Telegram */}
   <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://t.me/" target="_blank" rel="noreferrer" className="group">
+    <a href="https://t.me/+pV8obb9od4I3ZWY0" target="_blank" rel="noreferrer" className="group">
       <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
                       transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
         <img src="/icons/telegram.svg" alt="Telegram" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />

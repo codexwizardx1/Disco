@@ -789,134 +789,120 @@ useEffect(() => {
       {/* 👆 CLOSE the BLUR WRAPPER */}
 
       {/* ===== LINKS OVERLAY ===== */}
-      {isLinksOpen && (
-        <ClientPortal>
-          <AnimatePresence>
-            <>
-              {/* Close button */}
-            <motion.button
-  key="links-close"
-  initial={{ y: -80, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  exit={{ y: -80, opacity: 0 }}
-  transition={{ type: "spring", stiffness: 120, damping: 18 }}
-  onClick={() => setIsLinksOpen(false)}
- className="fixed top-6 left-1/2 -translate-x-1/2 -ml-6 w-16 h-16 rounded-full
-           bg-black/90 border border-purple-500/50 flex items-center justify-center
-           text-purple-200 text-3xl font-bold hover:bg-purple-600 hover:text-white
-           transition-colors shadow-lg z-[1100] pointer-events-auto"
->
-  ✕
-</motion.button>
+{isLinksOpen && (
+  <ClientPortal>
+    <AnimatePresence>
+      <>
+        {/* Close button */}
+        <motion.button
+          key="links-close"
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -80, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 18 }}
+          onClick={() => setIsLinksOpen(false)}
+          className="fixed top-6 left-1/2 -translate-x-1/2 -ml-6 w-16 h-16 rounded-full
+                     bg-black/90 border border-purple-500/50 flex items-center justify-center
+                     text-purple-200 text-3xl font-bold hover:bg-purple-600 hover:text-white
+                     transition-colors shadow-lg z-[1100] pointer-events-auto"
+        >
+          ✕
+        </motion.button>
 
-              {/* Backdrop — click to close */}
-              <motion.div
-                key="links-backdrop"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="fixed inset-0 z-[1000] bg-black/40 backdrop-blur-lg pointer-events-auto"
-                onClick={() => setIsLinksOpen(false)}
-              />
-{/* Icon grid — same layout, tighter rows */}
-<motion.div
-  key="links-grid"
-  className="fixed left-0 right-0 bottom-0 top-24 z-[1002]
-           flex flex-wrap justify-center content-start
-           gap-x-5 gap-y-4 px-4"
-  initial={{ scale: 0.9, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  exit={{ scale: 0.85, opacity: 0 }}
-  transition={{ type: "spring", stiffness: 200, damping: 20 }}
-  aria-hidden="true"
->
-  {/* Telegram */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://t.me/DiscoHedz" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/telegram.svg" alt="Telegram" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">Telegram</p>
-  </div>
+        {/* Backdrop — click to close */}
+        <motion.div
+          key="links-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-[1000] bg-black/40 backdrop-blur-lg pointer-events-auto"
+          onClick={() => setIsLinksOpen(false)}
+        />
 
-  {/* X */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://x.com/discohedzeth" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-black flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/x.svg" alt="X" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">X</p>
-  </div>
+        {/* Icon grid — same layout, tighter rows */}
+        <motion.div
+          key="links-grid"
+          className="fixed left-0 right-0 bottom-0 top-24 z-[1002]
+                     flex flex-wrap justify-center content-start
+                     gap-x-5 gap-y-4 px-4"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.85, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          aria-hidden="true"
+        >
+          {/* Telegram */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://t.me/DiscoHedz" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/telegram.svg" alt="Telegram" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">Telegram</p>
+          </div>
 
-  {/* Uniswap */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://app.uniswap.org/" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-pink-200 flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/uniswap.svg" alt="Uniswap" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">Uniswap</p>
-  </div>
+          {/* X */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://x.com/discohedzeth" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-black flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/x.svg" alt="X" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">X</p>
+          </div>
 
-  {/* DEXscreener */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://dexscreener.com/" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-gray-800 flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/dexscreener.png" alt="DEXscreener" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">DEXscreener</p>
-  </div>
+          {/* Uniswap */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://app.uniswap.org/" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-pink-200 flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/uniswap.svg" alt="Uniswap" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">Uniswap</p>
+          </div>
 
-  {/* DEXTools */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://www.dextools.io/" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-gray-900 flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/dextools.svg" alt="DEXTools" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">DEXTools</p>
-  </div>
+          {/* DEXscreener */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://dexscreener.com/" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-gray-800 flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/dexscreener.png" alt="DEXscreener" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">DEXscreener</p>
+          </div>
 
-  {/* TikTok */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://www.tiktok.com/@discohedzeth" target="_blank" rel="noreferrer" className="group">
-      <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
-                      transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
-        <img src="/icons/tiktok.svg" alt="TikTok" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">TikTok</p>
-  </div>
+          {/* DEXTools */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://www.dextools.io/" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-gray-900 flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/dextools.svg" alt="DEXTools" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">DEXTools</p>
+          </div>
 
-  {/* Instagram */}
-  <div className="w-[112px] flex flex-col items-center gap-1">
-    <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="group">
-      <div
-        className="w-24 h-24 rounded-2xl flex items-center justify-center 
-                   transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]"
-        style={{ background: "linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4)" }}
-      >
-        <img src="/icons/instagram.svg" alt="Instagram" className="w-12 h-12 group-hover:scale-125 transition-transform duration-300" />
-      </div>
-    </a>
-    <p className="text-xs leading-[1.1] text-purple-200 font-semibold">Instagram</p>
-  </div>
-</motion.div>
+          {/* TikTok */}
+          <div className="w-[112px] flex flex-col items-center gap-1">
+            <a href="https://www.tiktok.com/@discohedzeth" target="_blank" rel="noreferrer" className="group">
+              <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
+                <img src="/icons/tiktok.svg" alt="TikTok" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
+              </div>
+            </a>
+            <p className="text-xs leading-[1.1] text-purple-200 font-semibold">TikTok</p>
+          </div>
+        </motion.div>
+      </>
+    </AnimatePresence>
+  </ClientPortal>
+)}
 
-
-            </>
-          </AnimatePresence>
-        </ClientPortal>
-      )}
 
       {/* ===== CONTRACT OVERLAY ===== */}
       {isContractOpen && (

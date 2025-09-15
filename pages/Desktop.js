@@ -1165,33 +1165,13 @@ return (
             </a>
             <p className="text-sm text-purple-200 font-semibold">TikTok</p>
           </div>
-
-          {/* Instagram */}
-          <div className="flex flex-col items-center gap-2">
-            <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="group">
-              <div
-                className="w-32 h-32 rounded-2xl flex items-center justify-center 
-                           transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4)",
-                }}
-              >
-                <img
-                  src="/icons/instagram.svg"
-                  alt="Instagram"
-                  className="w-24 h-24 transition-transform duration-300 group-hover:scale-125"
-                />
-              </div>
-            </a>
-            <p className="text-sm text-purple-200 font-semibold">Instagram</p>
-          </div>
         </motion.div>
       </>
     </AnimatePresence>,
     document.body
   )
 }
+
 
 {/* ===== CONTRACT OVERLAY (portal, above blur) ===== */}
 {isContractOpen &&

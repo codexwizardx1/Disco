@@ -822,16 +822,17 @@ useEffect(() => {
 
         {/* Icon grid — same layout, tighter rows */}
         <motion.div
-          key="links-grid"
-          className="fixed left-0 right-0 bottom-0 top-24 z-[1002]
-                     flex flex-wrap justify-center content-start
-                     gap-x-5 gap-y-4 px-4"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.85, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          aria-hidden="true"
-        >
+  key="links-grid"
+  className="fixed left-0 right-0 bottom-0 top-36 z-[1002]
+             flex flex-wrap justify-center content-start
+             gap-x-5 gap-y-4 px-4"
+  initial={{ scale: 0.9, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  exit={{ scale: 0.85, opacity: 0 }}
+  transition={{ type: "spring", stiffness: 200, damping: 20 }}
+  aria-hidden="true"
+>
+
           {/* Telegram */}
           <div className="w-[112px] flex flex-col items-center gap-1">
             <a href="https://t.me/DiscoHedz" target="_blank" rel="noreferrer" className="group">

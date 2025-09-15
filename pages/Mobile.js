@@ -868,7 +868,7 @@ useEffect(() => {
 
           {/* DEXscreener */}
           <div className="w-[112px] flex flex-col items-center gap-1">
-            <a href="https://dexscreener.com/" target="_blank" rel="noreferrer" className="group">
+            <a href="https://dexscreener.com/ethereum/0x807ac92bc2f76876c2b20ad862d67a58727dc73c" target="_blank" rel="noreferrer" className="group">
               <div className="w-24 h-24 rounded-2xl bg-gray-800 flex items-center justify-center 
                               transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
                 <img src="/icons/dexscreener.png" alt="DEXscreener" className="w-10 h-10 group-hover:scale-125 transition-transform duration-300" />
@@ -879,7 +879,7 @@ useEffect(() => {
 
           {/* DEXTools */}
           <div className="w-[112px] flex flex-col items-center gap-1">
-            <a href="https://www.dextools.io/" target="_blank" rel="noreferrer" className="group">
+            <a href="https://www.dextools.io/app/en/token/disco?t=1757971374692" target="_blank" rel="noreferrer" className="group">
               <div className="w-24 h-24 rounded-2xl bg-gray-900 flex items-center justify-center 
                               transition-transform duration-300 group-hover:scale-110 shadow-[0_0_25px_#a855f7]">
                 <img src="/icons/dextools.svg" alt="DEXTools" className="w-9 h-9 group-hover:scale-125 transition-transform duration-300" />
@@ -959,16 +959,16 @@ useEffect(() => {
 
                   <div
                     className="flex-1 text-center font-mono text-sm md:text-base tracking-wide overflow-hidden text-ellipsis whitespace-nowrap"
-                    title="COMING SOON"
+                    title="0x787B197F793F7D04366536F6a7a56a799868A64b"
                   >
-                    COMING SOON
+                    0x787B197F793F7D04366536F6a7a56a799868A64b
                   </div>
 
                   <button
                     type="button"
                     onClick={async () => {
                       try {
-                        await navigator.clipboard.writeText("COMING SOON");
+                        await navigator.clipboard.writeText("0x787B197F793F7D04366536F6a7a56a799868A64b");
                         setCopied(true);
                         setTimeout(() => setCopied(false), 1200);
                       } catch (e) {

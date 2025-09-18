@@ -732,14 +732,15 @@ return (
    <div className="relative h-screen w-full flex flex-col items-center justify-center scale-90">
 
       {/* Top word */}
-      <span
-        ref={wordLeftRef}
-        className="font-[ProcerusRegular] text-green-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
-                   text-[50vh] sm:text-[55vh] md:text-[60vh] z-[120] pointer-events-none"
-        style={{ textShadow: "0 12px 28px rgba(0,0,0,0.9), 0 0 34px rgba(0,0,0,0.6)" }}
-      >
-        MATT FURIE’S
-      </span>
+     <span
+  ref={wordLeftRef}
+  className="font-[ProcerusRegular] text-green-400 leading-none tracking-tighter transform scale-y-[1.12]
+             text-[50vh] sm:text-[55vh] md:text-[60vh] z-[120] pointer-events-none"
+  style={{ textShadow: "0 12px 28px rgba(0,0,0,0.9), 0 0 34px rgba(0,0,0,0.6)" }}
+>
+  MATT FURIE’S
+</span>
+
 
       {/* Disco ball */}
       <div

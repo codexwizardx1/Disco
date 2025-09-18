@@ -736,12 +736,17 @@ return (
       >
         {/* Word on top */}
         <span
-          ref={wordLeftRef}
-          className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
-          style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
-        >
-          PEPE&apos;S
-        </span>
+  ref={wordLeftRef}
+  className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
+  style={{
+    textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)",
+    transform: "scaleX(0.65)", // 👈 add this line
+    transformOrigin: "center"
+  }}
+>
+  MATT FURIE’S
+</span>
+
 
         {/* Disco ball */}
         <div

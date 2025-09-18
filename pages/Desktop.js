@@ -729,47 +729,39 @@ return (
 
     {/* First half — heading + ball */}
     <div className="relative h-screen flex items-center justify-center w-full">
-      <h1
+     <h1
   ref={partyHeadingRef}
-  className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
-             text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
+  className="font-[ProcerusRegular] text-white leading-none 
+             text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] 
+             transform scale-y-[1.25] relative
+             grid grid-cols-[1fr_auto_1fr] items-center justify-items-center w-full"
 >
-  {/* Left word — locked width, scaled to fit */}
-  <div className="relative w-[min(35vw,600px)] flex justify-center">
-    <span
-      ref={wordLeftRef}
-      className="text-green-400 whitespace-nowrap inline-block relative z-[180] origin-center scale-x-[0.75]"
-      style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
-    >
-      MATT FURIE’S
-    </span>
-  </div>
-
-  {/* Disco ball stays centered */}
-  <div
-    className="pointer-events-none absolute top-0 z-[140] select-none"
-    style={{
-      left: ballX == null ? "50%" : `${ballX}px`,
-      transform: "translateX(calc(-50% - 1.5vw))",
-    }}
+  {/* Left word — scaled horizontally */}
+  <span
+    ref={wordLeftRef}
+    className="text-green-400 whitespace-nowrap inline-block relative z-[180] origin-center scale-x-[0.7]"
+    style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
   >
-    <motion.img
-      key="disco-ball"
-      src="/disco-ball.png"
-      alt="Disco Ball"
-      className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
-      style={{
-        y: ballY,
-        opacity: ballOpacity,
-        willChange: "transform, opacity",
-        transformOrigin: "center top",
-        filter:
-          "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
-      }}
-    />
-  </div>
+    MATT FURIE’S
+  </span>
 
-  {/* Right word — unchanged */}
+  {/* Disco ball in the middle column */}
+  <motion.img
+    key="disco-ball"
+    src="/disco-ball.png"
+    alt="Disco Ball"
+    className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain z-[140]"
+    style={{
+      y: ballY,
+      opacity: ballOpacity,
+      willChange: "transform, opacity",
+      transformOrigin: "center top",
+      filter:
+        "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
+    }}
+  />
+
+  {/* Right word — untouched */}
   <span
     ref={wordRightRef}
     className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
@@ -777,6 +769,7 @@ return (
     PARTY
   </span>
 </h1>
+
 
     </div>
 

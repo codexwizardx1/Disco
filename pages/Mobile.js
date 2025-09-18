@@ -565,7 +565,7 @@ useEffect(() => {
            <span
   ref={wordLeftRef}
   className="font-[ProcerusRegular] text-green-400 leading-none tracking-[0.005em] transform scale-y-[1.12] scale-75
-             text-[40vh] sm:text-[42vh] md:text-[44vh] z-[120] pointer-events-none"
+             text-[40vh] sm:text-[42vh] md:text-[44vh] z-[120] pointer-events-none -[-8vh]"
   style={{ 
     textShadow: "0 12px 28px rgba(0,0,0,0.9), 0 0 34px rgba(0,0,0,0.6)",
     transformOrigin: "center"

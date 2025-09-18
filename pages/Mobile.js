@@ -553,12 +553,13 @@ useEffect(() => {
         </section>
 
         {/* PEPE'S / PARTY */}
-        <section
-          id="pepes-party-hero"
-          ref={partySectionRef}
-          className="relative h-[110svh] w-full bg-black overflow-hidden flex items-center justify-center"
-          style={{ isolation: "isolate" }}
-        >
+       <section
+  id="pepes-party-hero"
+  ref={partySectionRef}
+  className="relative h-[105svh] w-full bg-black overflow-hidden flex items-center justify-center"
+  style={{ isolation: "isolate", marginTop: "-3svh" }}
+>
+
           <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
           <img src="/border 2.png" alt="Top Border" className="absolute top-0 left-0 w-full rotate-180 transform z-[70] pointer-events-none" />
           <div className="relative w-full h-full flex flex-col items-center justify-center">

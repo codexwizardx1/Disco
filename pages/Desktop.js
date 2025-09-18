@@ -772,13 +772,14 @@ return (
 
       {/* Bottom word */}
       <span
-        ref={wordRightRef}
-        className="font-[ProcerusRegular] text-purple-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
-                   text-[56vh] sm:text-[60vh] md:text-[64vh] z-[160] pointer-events-none mt-[8vh]"
-        style={{ textShadow: "0 10px 24px rgba(0,0,0,0.75)" }}
-      >
-        PARTY
-      </span>
+  ref={wordRightRef}
+  className="font-[ProcerusRegular] text-purple-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
+             text-[56vh] sm:text-[60vh] md:text-[64vh] z-[160] pointer-events-none mt-[3vh]"
+  style={{ textShadow: "0 10px 24px rgba(0,0,0,0.75)" }}
+>
+  PARTY
+</span>
+
 
    
     </div>

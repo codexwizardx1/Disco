@@ -779,7 +779,7 @@ return (
         PARTY
       </span>
 
-      </h1>
+   
     </div>
 
     {/* Second half — Party Hero with lights + money */}

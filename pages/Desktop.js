@@ -712,12 +712,13 @@ return (
 </section>
 )} 
 
-{/* ✅ PEPE'S PARTY + PARTY HERO (with floating money) */}
+{/* ✅ DESKTOP PEPE'S PARTY + PARTY HERO (like mobile layout but bigger) */}
 {!isBW && (
   <section
     id="pepes-party-hero"
     ref={partySectionRef}
     className="relative h-[200vh] w-full bg-black flex flex-col items-center justify-start overflow-hidden"
+    style={{ isolation: "isolate" }}
   >
     {/* Top strip + border */}
     <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
@@ -727,53 +728,57 @@ return (
       className="absolute top-0 left-0 w-full rotate-180 transform z-[70] pointer-events-none"
     />
 
-    {/* First half — heading + ball */}
-    <div className="relative h-screen flex items-center justify-center w-full">
-      <h1
-        ref={partyHeadingRef}
-        className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
-                   text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
+    {/* First half — heading + ball (stacked like mobile) */}
+    <div className="relative h-screen w-full flex flex-col items-center justify-center">
+      {/* Top word */}
+      <span
+        ref={wordLeftRef}
+        className="font-[ProcerusRegular] text-green-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
+                   text-[50vh] sm:text-[55vh] md:text-[60vh] z-[120] pointer-events-none"
+        style={{ textShadow: "0 12px 28px rgba(0,0,0,0.9), 0 0 34px rgba(0,0,0,0.6)" }}
       >
-        {/* Word on top */}
-        <span
-          ref={wordLeftRef}
-          className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
-          style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
-        >
-          PEPE&apos;S
-        </span>
+        MATT FURIE’S
+      </span>
 
-        {/* Disco ball */}
-        <div
-          className="pointer-events-none absolute top-0 z-[140] select-none"
+      {/* Disco ball */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-1/2 z-[140] select-none"
+        style={{
+          transform: "translate(-50%, -50%)",
+          WebkitMaskImage: "radial-gradient(closest-side, black 88%, transparent 100%)",
+          maskImage: "radial-gradient(closest-side, black 88%, transparent 100%)",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "100% 100%",
+          maskSize: "100% 100%",
+        }}
+      >
+        <motion.img
+          src="/disco-ball.png"
+          alt="Disco Ball"
+          className="w-[80vh] md:w-[90vh] lg:w-[100vh] h-auto object-contain max-w-none"
           style={{
-            left: ballX == null ? "50%" : `${ballX}px`,
-            transform: "translateX(calc(-50% - 1.5vw))",
+            y: ballY,
+            opacity: ballOpacity,
+            willChange: "transform, opacity",
+            transformOrigin: "center top",
+            filter:
+              "drop-shadow(0 22px 44px rgba(0,0,0,0.85)) drop-shadow(0 0 44px rgba(255,255,255,0.45)) drop-shadow(0 0 100px rgba(255,255,255,0.25))",
           }}
-        >
-          <motion.img
-            key="disco-ball"
-            src="/disco-ball.png"
-            alt="Disco Ball"
-            className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
-            style={{
-              y: ballY,
-              opacity: ballOpacity,
-              willChange: "transform, opacity",
-              transformOrigin: "center top",
-              filter:
-                "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
-            }}
-          />
-        </div>
+          draggable={false}
+        />
+      </div>
 
-        {/* Word under */}
-        <span
-          ref={wordRightRef}
-          className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
-        >
-          PARTY
-        </span>
+      {/* Bottom word */}
+      <span
+        ref={wordRightRef}
+        className="font-[ProcerusRegular] text-purple-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
+                   text-[56vh] sm:text-[60vh] md:text-[64vh] z-[160] pointer-events-none mt-[8vh]"
+        style={{ textShadow: "0 10px 24px rgba(0,0,0,0.75)" }}
+      >
+        PARTY
+      </span>
+
       </h1>
     </div>
 

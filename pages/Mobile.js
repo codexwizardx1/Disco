@@ -610,7 +610,7 @@ useEffect(() => {
             <span
               ref={wordRightRef}
               className="font-[ProcerusRegular] text-purple-400 leading-none tracking-[0.005em] transform scale-y-[1.12]
-                 text-[46vh] sm:text-[48vh] md:text-[50vh] z-[160] pointer-events-none mt-[-8vh]"
+                 text-[46vh] sm:text-[48vh] md:text-[50vh] z-[160] pointer-events-none mt-[2vh]"
               style={{ textShadow: "0 10px 24px rgba(0,0,0,0.75)" }}
             >
               PARTY

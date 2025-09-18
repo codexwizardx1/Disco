@@ -735,17 +735,13 @@ return (
                    text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
       >
         {/* Word on top */}
-       <span
-  ref={wordLeftRef}
-  className="text-green-400 whitespace-nowrap inline-block relative z-[180] scale-75"
-  style={{
-    textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)",
-    transformOrigin: "center"
-  }}
->
-  MATT FURIE’S
-</span>
-
+        <span
+          ref={wordLeftRef}
+          className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
+          style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
+        >
+          PEPE&apos;S
+        </span>
 
         {/* Disco ball */}
         <div

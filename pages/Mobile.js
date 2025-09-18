@@ -621,7 +621,11 @@ useEffect(() => {
         </section>
 
     {/* PARTY HERO (with floating money, scaled for mobile) */}
-<section className="relative w-full overflow-hidden" style={{ height: HEIGHTS.party }}>
+<section
+  className="relative w-full overflow-hidden"
+  style={{ height: HEIGHTS.party, marginTop: "-3svh" }}
+>
+
   <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
   <img
     src="/border 2.png"

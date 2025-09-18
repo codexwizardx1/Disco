@@ -36,8 +36,9 @@ const contractAddress = "0xYOUR_CONTRACT_ADDRESS_HERE";
 const [partyInView, setPartyInView] = useState(false);
   // Center the ball in the real gap between the two words
 const partySectionRef = useRef(null);
-const wordRef = useRef(null);
+const wordLeftRef = useRef(null);  // 👈 fix: name matches actual usage
 const wordRightRef = useRef(null);
+
 const [ballX, setBallX] = useState(null);
   const [leftScale, setLeftScale] = useState(1);
 

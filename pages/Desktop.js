@@ -740,7 +740,7 @@ return (
           className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
           style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
         >
-          PEPE&apos;S
+          MATT FURIE&apos;S
         </span>
 
         {/* Disco ball */}

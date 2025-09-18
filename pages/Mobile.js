@@ -557,7 +557,7 @@ useEffect(() => {
   id="pepes-party-hero"
   ref={partySectionRef}
   className="relative h-[105svh] w-full bg-black overflow-hidden flex items-center justify-center"
-  style={{ isolation: "isolate", marginTop: "-3svh" }}
+  style={{ isolation: "isolate", marginTop: "-5svh" }}
 >
 
           <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
@@ -623,7 +623,7 @@ useEffect(() => {
     {/* PARTY HERO (with floating money, scaled for mobile) */}
 <section
   className="relative w-full overflow-hidden"
-  style={{ height: HEIGHTS.party, marginTop: "-3svh" }}
+  style={{ height: HEIGHTS.party, marginTop: "-5svh" }}
 >
 
   <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />

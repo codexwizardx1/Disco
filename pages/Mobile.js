@@ -562,10 +562,10 @@ useEffect(() => {
           <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
           <img src="/border 2.png" alt="Top Border" className="absolute top-0 left-0 w-full rotate-180 transform z-[70] pointer-events-none" />
           <div className="relative w-full h-full flex flex-col items-center justify-center">
-        <span
+   <span
   ref={wordLeftRef}
   className="font-[ProcerusRegular] text-green-400 leading-[0.8] tracking-[0.005em] transform scale-y-[1.12] scale-75
-             text-[40vh] sm:text-[42vh] md:text-[44vh] z-[120] pointer-events-none"
+             text-[22vh] sm:text-[24vh] md:text-[26vh] z-[120] pointer-events-none"
   style={{
     textShadow: "0 12px 28px rgba(0,0,0,0.9), 0 0 34px rgba(0,0,0,0.6)",
     transformOrigin: "center"
@@ -573,6 +573,7 @@ useEffect(() => {
 >
   MATT FURIE’S
 </span>
+
 
 
             {/* Disco ball */}

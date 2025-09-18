@@ -730,51 +730,54 @@ return (
     {/* First half — heading + ball */}
     <div className="relative h-screen flex items-center justify-center w-full">
       <h1
-        ref={partyHeadingRef}
-        className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
-                   text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
-      >
-        {/* Word on top */}
-        <span
-          ref={wordLeftRef}
-          className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
-          style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
-        >
-          PEPE&apos;S
-        </span>
+  ref={partyHeadingRef}
+  className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
+             text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
+>
+  {/* Left word — locked width, scaled to fit */}
+  <div className="relative w-[min(35vw,600px)] flex justify-center">
+    <span
+      ref={wordLeftRef}
+      className="text-green-400 whitespace-nowrap inline-block relative z-[180] origin-center scale-x-[0.75]"
+      style={{ textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)" }}
+    >
+      MATT FURIE’S
+    </span>
+  </div>
 
-        {/* Disco ball */}
-        <div
-          className="pointer-events-none absolute top-0 z-[140] select-none"
-          style={{
-            left: ballX == null ? "50%" : `${ballX}px`,
-            transform: "translateX(calc(-50% - 1.5vw))",
-          }}
-        >
-          <motion.img
-            key="disco-ball"
-            src="/disco-ball.png"
-            alt="Disco Ball"
-            className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
-            style={{
-              y: ballY,
-              opacity: ballOpacity,
-              willChange: "transform, opacity",
-              transformOrigin: "center top",
-              filter:
-                "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
-            }}
-          />
-        </div>
+  {/* Disco ball stays centered */}
+  <div
+    className="pointer-events-none absolute top-0 z-[140] select-none"
+    style={{
+      left: ballX == null ? "50%" : `${ballX}px`,
+      transform: "translateX(calc(-50% - 1.5vw))",
+    }}
+  >
+    <motion.img
+      key="disco-ball"
+      src="/disco-ball.png"
+      alt="Disco Ball"
+      className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
+      style={{
+        y: ballY,
+        opacity: ballOpacity,
+        willChange: "transform, opacity",
+        transformOrigin: "center top",
+        filter:
+          "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
+      }}
+    />
+  </div>
 
-        {/* Word under */}
-        <span
-          ref={wordRightRef}
-          className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
-        >
-          PARTY
-        </span>
-      </h1>
+  {/* Right word — unchanged */}
+  <span
+    ref={wordRightRef}
+    className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
+  >
+    PARTY
+  </span>
+</h1>
+
     </div>
 
     {/* Second half — Party Hero with lights + money */}

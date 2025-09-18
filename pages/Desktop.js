@@ -36,9 +36,34 @@ const contractAddress = "0xYOUR_CONTRACT_ADDRESS_HERE";
 const [partyInView, setPartyInView] = useState(false);
   // Center the ball in the real gap between the two words
 const partySectionRef = useRef(null);
-const wordLeftRef = useRef(null);
+const wordRef = useRef(null);
 const wordRightRef = useRef(null);
 const [ballX, setBallX] = useState(null);
+  const [leftScale, setLeftScale] = useState(1);
+
+useEffect(() => {
+  if (!wordLeftRef.current) return;
+
+  // Create a hidden test span with "PEPE’S"
+  const tester = document.createElement("span");
+  tester.style.position = "absolute";
+  tester.style.visibility = "hidden";
+  tester.style.whiteSpace = "nowrap";
+  tester.style.fontFamily = "ProcerusRegular";
+  tester.style.fontSize = getComputedStyle(wordLeftRef.current).fontSize;
+  tester.textContent = "PEPE’S";
+  document.body.appendChild(tester);
+
+  const pepeWidth = tester.getBoundingClientRect().width;
+  const mattWidth = wordLeftRef.current.getBoundingClientRect().width;
+
+  if (mattWidth > 0) {
+    setLeftScale(pepeWidth / mattWidth);
+  }
+
+  tester.remove();
+}, []);
+
   const partyHeadingRef = useRef(null);
 
 
@@ -729,57 +754,57 @@ return (
 
     {/* First half — heading + ball */}
     <div className="relative h-screen flex items-center justify-center w-full">
-      <h1
-        ref={partyHeadingRef}
-        className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
-                   text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
-      >
-        {/* Word on top */}
-        <span
-  ref={wordLeftRef}
-  className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
-  style={{
-    textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)",
-    transform: "scaleX(0.65)", // 👈 add this line
-    transformOrigin: "center"
-  }}
+     <h1
+  ref={partyHeadingRef}
+  className="font-[ProcerusRegular] text-white flex items-center justify-center gap-[10vw] leading-none 
+             text-[60vh] md:text-[70vh] lg:text-[80vh] tracking-[0.02em] transform scale-y-[1.25] relative"
 >
-  MATT FURIE’S
-</span>
+  {/* Left word — auto-scaled to match PEPE’S width */}
+  <span
+    ref={wordLeftRef}
+    className="text-green-400 whitespace-nowrap inline-block relative z-[180]"
+    style={{
+      textShadow: "0 6px 14px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6)",
+      transform: `scale(${leftScale})`,
+      transformOrigin: "left center",
+    }}
+  >
+    MATT FURIE’S
+  </span>
 
+  {/* Disco ball */}
+  <div
+    className="pointer-events-none absolute top-0 z-[140] select-none"
+    style={{
+      left: ballX == null ? "50%" : `${ballX}px`,
+      transform: "translateX(calc(-50% - 1.5vw))",
+    }}
+  >
+    <motion.img
+      key="disco-ball"
+      src="/disco-ball.png"
+      alt="Disco Ball"
+      className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
+      style={{
+        y: ballY,
+        opacity: ballOpacity,
+        willChange: "transform, opacity",
+        transformOrigin: "center top",
+        filter:
+          "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
+      }}
+    />
+  </div>
 
-        {/* Disco ball */}
-        <div
-          className="pointer-events-none absolute top-0 z-[140] select-none"
-          style={{
-            left: ballX == null ? "50%" : `${ballX}px`,
-            transform: "translateX(calc(-50% - 1.5vw))",
-          }}
-        >
-          <motion.img
-            key="disco-ball"
-            src="/disco-ball.png"
-            alt="Disco Ball"
-            className="w-[72vh] md:w-[86vh] lg:w-[100vh] max-w-none h-auto object-contain"
-            style={{
-              y: ballY,
-              opacity: ballOpacity,
-              willChange: "transform, opacity",
-              transformOrigin: "center top",
-              filter:
-                "drop-shadow(0 14px 28px rgba(0,0,0,0.85)) drop-shadow(0 0 26px rgba(255,255,255,0.5)) drop-shadow(0 0 60px rgba(255,255,255,0.25))",
-            }}
-          />
-        </div>
+  {/* Right word — PARTY stays the same */}
+  <span
+    ref={wordRightRef}
+    className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
+  >
+    PARTY
+  </span>
+</h1>
 
-        {/* Word under */}
-        <span
-          ref={wordRightRef}
-          className="text-purple-400 whitespace-nowrap inline-block relative z-[120]"
-        >
-          PARTY
-        </span>
-      </h1>
     </div>
 
     {/* Second half — Party Hero with lights + money */}

@@ -729,7 +729,8 @@ return (
     />
 
     {/* First half — heading + ball (stacked like mobile) */}
-    <div className="relative h-screen w-full flex flex-col items-center justify-center">
+   <div className="relative h-screen w-full flex flex-col items-center justify-center scale-90">
+
       {/* Top word */}
       <span
         ref={wordLeftRef}

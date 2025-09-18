@@ -722,11 +722,7 @@ return (
   >
     {/* Top strip + border */}
     <div className="absolute top-0 left-0 w-full h-[8px] bg-black z-[80]" />
-    <img
-      src="/border 2.png"
-      alt="Top Border"
-      className="absolute top-0 left-0 w-full rotate-180 transform z-[70] pointer-events-none"
-    />
+    
 
     {/* First half — heading + ball (stacked like mobile) */}
    <div className="relative h-screen w-full flex flex-col items-center justify-center scale-90">

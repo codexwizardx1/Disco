@@ -725,7 +725,7 @@ return (
     
 
     {/* First half — heading + ball (stacked like mobile) */}
-   <div className="relative h-screen w-full flex flex-col items-center justify-center scale-90">
+   <div className="relative h-screen w-full flex flex-col items-center justify-center scale-90 translate-y-[4vh]">
 
       {/* Top word */}
       <span
